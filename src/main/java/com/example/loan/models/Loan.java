@@ -8,7 +8,7 @@ import java.util.List;
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private double amount;
     private boolean paid = false;
     private int repaymentPeriod;
@@ -26,7 +26,7 @@ public class Loan {
         this.status = Status.OPEN;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
     public double getAmount() {
