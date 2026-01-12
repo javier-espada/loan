@@ -2,9 +2,11 @@ package com.example.loan.services;
 
 import com.example.loan.models.Loan;
 import com.example.loan.models.User;
+import org.springframework.stereotype.Service;
 
 import static com.example.loan.models.Status.*;
 
+@Service
 public class ProcesService extends Thread{
 
     private final User user;

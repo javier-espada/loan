@@ -3,12 +3,14 @@ package com.example.loan.services;
 import com.example.loan.models.Loan;
 import com.example.loan.models.Status;
 import com.example.loan.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LoanService {
 
     private long loanID = 0L;
