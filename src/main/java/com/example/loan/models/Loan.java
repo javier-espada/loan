@@ -23,7 +23,7 @@ public class Loan {
         this.amount = amount;
         this.repaymentPeriod = repaymentPeriod;
         this.user = user;
-        this.status = Status.OPEN;
+        this.status = Status.PENDING;
     }
 
     public Long getId() {
