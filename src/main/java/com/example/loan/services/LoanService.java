@@ -19,8 +19,10 @@ public class LoanService {
     public LoanService() {
     }
 
-    public void createLoan(double amount, int repaymentPeriod, User user) {
-        loanList.put(loanID++, new Loan(amount, repaymentPeriod, user));
+    public Loan createLoan(double amount, int repaymentPeriod, User user) {
+        Loan loan = new Loan(amount, repaymentPeriod, user);
+        loanList.put(loanID++, loan);
+        return loan;
     }
 
     public Loan paidLoan(long idLoan, User user) {
@@ -30,7 +32,9 @@ public class LoanService {
         if (optionalLoan.isPresent()) {
             Loan loan = optionalLoan.get();
             loan.setPaid(true);
+            loanList.get(idLoan).setPaid(true);
             loan.setStatus(Status.CLOSED);
+            loanList.get(idLoan).setStatus(Status.CLOSED);
             return loan;
         }
         return null;
