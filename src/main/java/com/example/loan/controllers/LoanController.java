@@ -15,7 +15,10 @@ public class LoanController {
     private LoanService loanService;
 
     @Autowired
-    public LoanController(TestUserService testUserService, LoanService loanService) {this.testUserService = testUserService;}
+    public LoanController(TestUserService testUserService, LoanService loanService) {
+        this.testUserService = testUserService;
+        this.loanService = loanService;
+    }
 
     @PostMapping
     public Loan createLoan(@RequestParam double amount, @RequestParam int repaymentPeriod, @RequestBody User user) {
@@ -25,6 +28,10 @@ public class LoanController {
        return loan;
     }
 
+    @PatchMapping("/{idLoan}")
+    public Loan paidLoan(@PathVariable Long idLoan, @RequestBody User user) {
+        return loanService.paidLoan(idLoan, user);
+    }
 
 
 }
