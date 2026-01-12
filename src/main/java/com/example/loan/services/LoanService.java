@@ -13,15 +13,11 @@ import java.util.Optional;
 @Service
 public class LoanService {
 
-    private long loanID = 0L;
-    private static HashMap<Long, Loan> loanList = new HashMap<>();
-
     public LoanService() {
     }
 
     public Loan createLoan(double amount, int repaymentPeriod, User user) {
         Loan loan = new Loan(amount, repaymentPeriod, user);
-        loanList.put(loanID++, loan);
         return loan;
     }
 
@@ -32,9 +28,7 @@ public class LoanService {
         if (optionalLoan.isPresent()) {
             Loan loan = optionalLoan.get();
             loan.setPaid(true);
-            loanList.get(idLoan).setPaid(true);
             loan.setStatus(Status.CLOSED);
-            loanList.get(idLoan).setStatus(Status.CLOSED);
             return loan;
         }
         return null;
