@@ -15,7 +15,7 @@ public class ProcesService extends Thread{
     }
 
     public void run(){
-        if((user.getCreditScore() - UserService.existingUnpaidLoans(user.getId()))*30 < 600 || user.getIncome()*5 < loan.getAmount()) {
+        if((user.getCreditScore() - TestUserService.existingUnpaidLoans(user.getId()))*30 < 600 || user.getIncome()*5 < loan.getAmount()) {
             loan.setStatus(REJECTED);
         } else {
             loan.setStatus(OPEN);

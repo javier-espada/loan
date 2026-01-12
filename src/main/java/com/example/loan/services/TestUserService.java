@@ -5,9 +5,8 @@ import com.example.loan.models.User;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 
-public class UserService {
+public class TestUserService {
     private static HashMap<Long, User> usuarios;
 
     public static void testUsers() {
