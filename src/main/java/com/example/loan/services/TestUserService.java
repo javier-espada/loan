@@ -9,9 +9,9 @@ import java.util.Iterator;
 public class TestUserService {
     private static HashMap<Long, User> usuarios;
 
-    public static void testUsers() {
+    public TestUserService() {
         long testId = 0L;
-        usuarios.put(testId++, new User("Tania", "Rguez",2500));
+        usuarios.put(testId++, new User("Tania", "Rodríguez",2500));
         usuarios.put(testId++, new User("Carlos", "Rivera",1000));
         usuarios.put(testId++, new User("Alicia", "Lopez",2000));
         usuarios.put(testId++, new User("Javier", "Espada",2000));
