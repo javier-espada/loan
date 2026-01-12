@@ -2,10 +2,12 @@ package com.example.loan.services;
 
 import com.example.loan.models.Loan;
 import com.example.loan.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Iterator;
 
+@Service
 public class TestUserService {
     private static HashMap<Long, User> usuarios;
 
