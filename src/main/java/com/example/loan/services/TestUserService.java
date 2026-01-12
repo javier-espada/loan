@@ -9,18 +9,22 @@ import java.util.Iterator;
 
 @Service
 public class TestUserService {
-    private static HashMap<Long, User> usuarios;
+    private static HashMap<Long, User> usuarios = new HashMap<>();
 
     public TestUserService() {
         long testId = 0L;
-        usuarios.put(testId++, new User("Tania", "Rodríguez",2500));
-        usuarios.put(testId++, new User("Carlos", "Rivera",1000));
-        usuarios.put(testId++, new User("Alicia", "Lopez",2000));
-        usuarios.put(testId++, new User("Javier", "Espada",2000));
+        usuarios.put(0L, new User("Tania", "Rodríguez",2500));
+        usuarios.put(1L, new User("Carlos", "Rivera",1000));
+        usuarios.put(2L, new User("Alicia", "Lopez",2000));
+        usuarios.put(3L, new User("Javier", "Espada",2000));
     }
 
-    public static User getUser(long id) {
+    public User getUser(long id) {
         return usuarios.get(id);
+    }
+
+    public HashMap<Long, User> getUsuarios() {
+        return usuarios;
     }
 
     public static int existingUnpaidLoans (long clientId) {

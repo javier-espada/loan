@@ -1,25 +1,17 @@
 package com.example.loan.models;
 
-import jakarta.persistence.*;
-
-import java.util.List;
-@Entity
-@Table(name="loans")
 public class Loan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private double amount;
+    private static Long id = 0L;
+    private Double amount;
     private boolean paid = false;
-    private int repaymentPeriod;
+    private Integer repaymentPeriod;
     private Status status;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
     private User user;
 
     public Loan() {}
     public Loan(double amount, int repaymentPeriod, User user) {
+        id++;
         this.amount = amount;
         this.repaymentPeriod = repaymentPeriod;
         this.user = user;

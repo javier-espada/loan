@@ -1,28 +1,22 @@
 package com.example.loan.models;
 
-import jakarta.persistence.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "users")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private static long id = 0L;
 
     private String firstName;
     private String lastName;
-    private int creditScore;
-    private double income;
+    private Integer creditScore;
+    private Double income;
 
-    @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
     private List<Loan> loans = new ArrayList<>();
 
     public User(){}
     public User(String firstName, String lastName, double income) {
+        id++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.income = income;
